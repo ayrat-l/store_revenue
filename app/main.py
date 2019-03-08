@@ -25,16 +25,35 @@ for store in stores:
     top3_profit_stores.append(store[:3])
 print(top3_profit_stores)
 
-#Лучший магазин за неделю с ежедневной вырочкой
+#Лучший магазин за неделю с ежедневной выручкой
 
 for store in stores:
     store.sort(reverse=True)
 
-top1_profit_stores = []
+top1_profit_stores = [] #ТОП1 лучшая продажа магазина
 for store in stores:
     top1_profit_stores.append(store[:1])
 
-top1_index_profit = []
+top1_index_profit = [] #Определяем индекс магазина с лучшей ежедневной выручкой
 for index, profit in enumerate(top1_profit_stores):
     if profit == max(top1_profit_stores):
         top1_index_profit.append(index)
+
+
+#Худший магазин за неделю с ежедневной выручкой
+
+for store in store:
+    stores.sort()
+
+top1_bad_profit = [] #ТОП1 худшая ежедневная выручка за неделю
+for store in stores:
+    top1_bad_profit.append(store[:1])
+print(top1_bad_profit)
+
+top1_bad_profit_index = [] #Определяем индекс магазина с худшей  ежедневной продажей
+for index, profit in enumerate(top1_bad_profit):
+    if profit == min(top1_bad_profit):
+        top1_bad_profit_index.append(index)
+print(top1_bad_profit_index)
+
+
