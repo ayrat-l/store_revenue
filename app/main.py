@@ -33,11 +33,8 @@ for store in stores:
 top1_profit_stores = []
 for store in stores:
     top1_profit_stores.append(store[:1])
-print(top1_profit_stores)
 
 top1_index_profit = []
 for index, profit in enumerate(top1_profit_stores):
     if profit == max(top1_profit_stores):
         top1_index_profit.append(index)
-
-print(top1_index_profit)
