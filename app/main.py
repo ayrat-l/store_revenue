@@ -14,3 +14,13 @@ top_store_index = [] #Находим индекс лучшего магазин�
 for index, profit in enumerate(store_profit):
     if profit == max(store_profit):
         top_store_index.append(index)
+
+#Топ 3 лучших продаж каждого магазина
+
+for store in stores:
+    store.sort(reverse=True)
+
+top3_profit_stores = []
+for store in stores:
+    top3_profit_stores.append(store[:3])
+print(top3_profit_stores)
