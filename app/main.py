@@ -40,7 +40,7 @@ for index, profit in enumerate(top1_profit_stores):
         top1_index_profit.append(index)
 
 
-#Худший магазин за неделю с ежедневной выручкой
+#Худший магазин за неделю с ежедневной выручкой\ъхзшнекуй
 
 for store in store:
     stores.sort()
@@ -56,4 +56,12 @@ for index, profit in enumerate(top1_bad_profit):
         top1_bad_profit_index.append(index)
 print(top1_bad_profit_index)
 
+#Лучший store по средней ежедневной выручке
+average_daily_profit = []
+for store in stores:
+    average_daily_profit.append(round(sum(store)/len(store)))
 
+average_daily_profit_index = []
+for i, profit in enumerate(average_daily_profit):
+    if profit == max(average_daily_profit):
+        average_daily_profit_index.append(i)
