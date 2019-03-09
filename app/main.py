@@ -1,4 +1,4 @@
-#1. Лучшие продажи у магазина
+from app.lib import store_with_best_profit
 
 stores = [
     [500, 700, 400, 540, 610, 1100, 800],
@@ -6,64 +6,6 @@ stores = [
     [600, 140, 250, 400, 1300, 790, 2000]
 ]
 
-store_profit = [] #Общий доход каждого магазина
-for store in stores:
-    store_profit.append(sum(store))
-
-top_store_index = [] #Находим индекс лучшего магазина по суммарной выручке
-for index, profit in enumerate(store_profit):
-    if profit == max(store_profit):
-        top_store_index.append(index)
-
-#2. Топ 3 лучших продаж каждого магазина
-
-for store in stores:
-    store.sort(reverse=True)
-
-top3_profit_stores = []
-for store in stores:
-    top3_profit_stores.append(store[:3])
-print(top3_profit_stores)
+print(store_with_best_profit(stores))
 
 
-#3. Лучший магазин за неделю с ежедневной выручкой
-
-for store in stores:
-    store.sort(reverse=True)
-
-top1_profit_stores = [] #ТОП1 лучшая продажа магазина
-for store in stores:
-    top1_profit_stores.append(store[:1])
-
-top1_index_profit = [] #Определяем индекс магазина с лучшей ежедневной выручкой
-for index, profit in enumerate(top1_profit_stores):
-    if profit == max(top1_profit_stores):
-        top1_index_profit.append(index)
-
-#4.Худший магазин за неделю с ежедневной выручкой
-
-for store in store:
-    stores.sort()
-
-top1_bad_profit = [] #ТОП1 худшая ежедневная выручка за неделю
-for store in stores:
-    top1_bad_profit.append(store[:1])
-print(top1_bad_profit)
-
-top1_bad_profit_index = [] #Определяем индекс магазина с худшей  ежедневной продажей
-for index, profit in enumerate(top1_bad_profit):
-    if profit == min(top1_bad_profit):
-        top1_bad_profit_index.append(index)
-print(top1_bad_profit_index)
-
-
-#5.Лучший store со средней ежедневной выручкой
-
-average_daily_profit = []
-for store in stores:
-    average_daily_profit.append(round(sum(store)/len(store)))
-
-average_daily_profit_index = []
-for i, profit in enumerate(average_daily_profit):
-    if profit == max(average_daily_profit):
-        average_daily_profit_index.append(i)
